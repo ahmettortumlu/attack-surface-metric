@@ -1,42 +1,79 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Radial Axes Chart</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-  <div class="flex items-center w-full h-screen">
-    <div class="w-5/12">
-      <div class="flex gap-8 items-center">
-        <div>
-          <label for="chart-type">Chart type</label>
-          <select id="chart-type" class="border px-2 py-1 border-black rounded">
-            <option value="radar">Radar</option>
-            <option value="bar">Bar</option>
-            <option value="line">Line</option>
-          </select>
+  <head>
+    <title>Attack Surface Metric</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex flex-col h-screen">
+      <div class="flex gap-2 p-4">
+        <h2
+          class="tab-label text-xl cursor-pointer transition-all duration-500 px-2 border-b-2 border-b-black"
+          id="tab-1-label"
+        >
+          Form
+        </h2>
+        <h2
+          class="tab-label text-xl cursor-pointer transition-all duration-500 px-2 border-b-2"
+          id="tab-2-label"
+        >
+          Result
+        </h2>
+      </div>
+      <div class="flex-1 flex gap-2 w-screen">
+        <div
+          id="tab-1"
+          class="tab-content bg-red-300 w-screen overflow-hidden transition-all duration-500"
+        >
+          <div class="w-screen">This is first tab</div>
         </div>
-        <div>
-          <label for="number-of-datasets">Number of datasets</label>
-          <select id="number-of-datasets" class="border px-2 py-1 border-black rounded">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option selected value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
-        <div id="delete" class="cursor-pointer">
-          <p>Reset data</p>
+        <div
+          id="tab-2"
+          class="tab-content w-0 overflow-hidden transition-all duration-500"
+        >
+          <div class="w-screen h-full">
+            <div class="flex items-center w-full h-full justify-center">
+              <div class="w-5/12">
+                <div class="flex gap-8 items-center">
+                  <div>
+                    <label for="chart-type">Chart type</label>
+                    <select
+                      id="chart-type"
+                      class="border px-2 py-1 border-black rounded"
+                    >
+                      <option value="radar">Radar</option>
+                      <option value="bar">Bar</option>
+                      <option value="line">Line</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="number-of-datasets">Number of datasets</label>
+                    <select
+                      id="number-of-datasets"
+                      class="border px-2 py-1 border-black rounded"
+                    >
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option selected value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
+                  <div id="delete" class="cursor-pointer">
+                    <p>Reset data</p>
+                  </div>
+                </div>
+                <div id="table-container" class="w-full"></div>
+              </div>
+              <div class="w-6/12 py-2">
+                <canvas id="radial-chart" class=""></canvas>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div id="table-container" class="w-full"></div>
     </div>
-    <div class="w-6/12 py-2">
-      <canvas id="radial-chart" class=""></canvas>
-    </div>
-  </div>
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
