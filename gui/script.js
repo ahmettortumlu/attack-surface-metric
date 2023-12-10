@@ -1,3 +1,27 @@
+const tabLabels = document.querySelectorAll(".tab-label");
+const tabs = document.querySelectorAll(".tab-content");
+
+tabLabels.forEach(label => {
+    label.addEventListener('click', function() {
+
+        tabLabels.forEach(lbl => lbl.classList.remove('border-b-black'));
+        this.classList.add( 'border-b-black');
+
+        tabs.forEach(tab => {
+            tab.classList.add('w-0');
+            tab.classList.remove('w-screen');
+        });
+     
+        const tabId = label.id.replace('-label', '');
+      
+        document.querySelector(`#${tabId}`).classList.add('w-screen');
+        document.querySelector(`#${tabId}`).classList.remove('w-0');
+    });
+});
+
+
+////////////////////// result tab
+
 const chartContext = document.getElementById("radial-chart").getContext("2d");
 let myChart = null;
 let chartType = "radar";
@@ -162,3 +186,4 @@ document.querySelector("#delete").onclick = () => {
   localStorage.removeItem("chart_type");
   window.location.reload();
 };
+
