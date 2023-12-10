@@ -1,0 +1,86 @@
+<mxfile host="app.diagrams.net" modified="2023-12-06T21:05:53.421Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="vmE6dfvUgv0Z4TX6HhUE" version="21.5.2" type="device">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1434" dy="822" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-4" value="Evet" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;" parent="WIyWlLk6GJQsqaUBKTNV-1" edge="1">
+          <mxGeometry y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="115" y="291" as="sourcePoint" />
+            <mxPoint x="115" y="351" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-6" value="Web uygulaması HTTPS&#39;te mi çalışıyor" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="50" y="171" width="130" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="h_RD9dawk91Q07xSKtJ4-1" value="crypt = 1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="270" y="201" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="h_RD9dawk91Q07xSKtJ4-4" value="Hayır" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-6" target="h_RD9dawk91Q07xSKtJ4-1" edge="1">
+          <mxGeometry y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="180" y="241" as="sourcePoint" />
+            <mxPoint x="270" y="241" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h_RD9dawk91Q07xSKtJ4-5" value="crypt = 0" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="55" y="351" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="h_RD9dawk91Q07xSKtJ4-6" value="Hayır" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;" parent="WIyWlLk6GJQsqaUBKTNV-1" edge="1">
+          <mxGeometry y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="533" y="403" as="sourcePoint" />
+            <mxPoint x="533" y="463" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h_RD9dawk91Q07xSKtJ4-7" value="Listelenen URL&#39;ler arasında HTTPS olmayan var mı?" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="468" y="283" width="130" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="h_RD9dawk91Q07xSKtJ4-8" value="crypt-mix = 10" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="683" y="304" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="h_RD9dawk91Q07xSKtJ4-9" value="Evet" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;entryX=-0.017;entryY=0.65;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="h_RD9dawk91Q07xSKtJ4-7" target="h_RD9dawk91Q07xSKtJ4-8" edge="1">
+          <mxGeometry y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="603" y="338" as="sourcePoint" />
+            <mxPoint x="653" y="348" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h_RD9dawk91Q07xSKtJ4-10" value="crypt-mix = 0" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="473" y="463" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="h_RD9dawk91Q07xSKtJ4-11" value="extract-urls.py script&#39;ini çalıştır" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="472" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="h_RD9dawk91Q07xSKtJ4-13" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="h_RD9dawk91Q07xSKtJ4-26" target="h_RD9dawk91Q07xSKtJ4-7" edge="1">
+          <mxGeometry y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="510" y="258" as="sourcePoint" />
+            <mxPoint x="593" y="258" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h_RD9dawk91Q07xSKtJ4-26" value="Web uygulamasının çalıştığı linki gir" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="460" y="171" width="145" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="h_RD9dawk91Q07xSKtJ4-27" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="h_RD9dawk91Q07xSKtJ4-11" target="h_RD9dawk91Q07xSKtJ4-26" edge="1">
+          <mxGeometry y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="683.5" y="128" as="sourcePoint" />
+            <mxPoint x="798" y="178" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h_RD9dawk91Q07xSKtJ4-30" value="Web uygulamasını tarayıcıda aç" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="56" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="h_RD9dawk91Q07xSKtJ4-31" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="h_RD9dawk91Q07xSKtJ4-30" edge="1">
+          <mxGeometry y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="266.5" y="128" as="sourcePoint" />
+            <mxPoint x="116" y="171" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
