@@ -26,7 +26,7 @@ const chartContext = document.getElementById("radial-chart").getContext("2d");
 let myChart = null;
 let chartType = "radar";
 
-const questions = [
+const parameters = [
   "ddis",
   "dyn",
   "security",
@@ -42,7 +42,7 @@ function createDataSetLabels(count) {
   return Array.from({ length: count }, (_, i) => `DataSet ${i + 1}`);
 }
 
-function initializeChart(chartType, questions, dataSets) {
+function initializeChart(chartType, parameters, dataSets) {
   if (myChart) {
     myChart.destroy();
   }
@@ -50,7 +50,7 @@ function initializeChart(chartType, questions, dataSets) {
   myChart = new Chart(chartContext, {
     type: chartType,
     data: {
-      labels: questions,
+      labels: parameters,
       datasets: dataSets,
     },
     options: {
@@ -63,17 +63,17 @@ function initializeChart(chartType, questions, dataSets) {
   });
 }
 
-function generateDatasets(labels, questions) {
+function generateDatasets(labels, parameters) {
   return labels.map((label) => ({
     label: label,
-    data: new Array(questions.length).fill(0),
+    data: new Array(parameters.length).fill(0),
     fill: true,
     // borderColor: `rgb(${randomColorValue()}, ${randomColorValue()}, ${randomColorValue()})`,
     // backgroundColor: `rgba(${randomColorValue()}, ${randomColorValue()}, ${randomColorValue()}, 0.5)`,
   }));
 }
 
-function createTable(containerId, dataSetLabels, questions, dataSets) {
+function createTable(containerId, dataSetLabels, parameters, dataSets) {
   const container = document.getElementById(containerId);
   container.innerHTML = "";
 
@@ -82,15 +82,15 @@ function createTable(containerId, dataSetLabels, questions, dataSets) {
   const tbody = document.createElement("tbody");
 
   const headerRow = document.createElement("tr");
-  headerRow.appendChild(createCell("th", "Questions"));
+  headerRow.appendChild(createCell("th", "Parameters"));
   dataSetLabels.forEach((label) =>
     headerRow.appendChild(createCell("th", label))
   );
   thead.appendChild(headerRow);
 
-  questions.forEach((question, qIndex) => {
+  parameters.forEach((parameter, qIndex) => {
     const row = document.createElement("tr");
-    row.appendChild(createCell("td", question));
+    row.appendChild(createCell("td", parameter));
 
     dataSets.forEach((dataSet, dsIndex) => {
       const cell = createCell("td");
@@ -100,7 +100,7 @@ function createTable(containerId, dataSetLabels, questions, dataSets) {
       input.value = dataSet.data[qIndex];
       input.addEventListener("input", (e) => {
         dataSet.data[qIndex] = Number(e.target.value);
-        initializeChart(chartType, questions, dataSets);
+        initializeChart(chartType, parameters, dataSets);
         localStorage.setItem("chart_data", JSON.stringify(dataSets));
       });
       cell.appendChild(input);
@@ -139,11 +139,11 @@ if (localStorage.getItem("chart_data")) {
   dataSets = dataSets.slice(0, countDatasetLabel);
   while (dataSets.length < countDatasetLabel) {
     dataSets.push(
-      generateDatasets([`DataSet ${dataSets.length + 1}`], questions)[0]
+      generateDatasets([`DataSet ${dataSets.length + 1}`], parameters)[0]
     );
   }
 } else {
-  dataSets = generateDatasets(dataSetLabels, questions);
+  dataSets = generateDatasets(dataSetLabels, parameters);
   localStorage.setItem("chart_data", JSON.stringify(dataSets));
 }
 
@@ -151,12 +151,12 @@ if (localStorage.getItem("chart_type")) {
   chartType = localStorage.getItem("chart_type");
   document.querySelector("#chart-type").value = chartType;
 }
-initializeChart(chartType, questions, dataSets);
-createTable("table-container", dataSetLabels, questions, dataSets);
+initializeChart(chartType, parameters, dataSets);
+createTable("table-container", dataSetLabels, parameters, dataSets);
 
 document.getElementById("chart-type").addEventListener("change", (e) => {
   chartType = e.target.value;
-  initializeChart(chartType, questions, dataSets);
+  initializeChart(chartType, parameters, dataSets);
   localStorage.setItem("chart_type", chartType);
 });
 
@@ -170,12 +170,12 @@ document
     newDataSets = newDataSets.slice(0, newLabelCount);
     while (newDataSets.length < newLabelCount) {
       newDataSets.push(
-        generateDatasets([`DataSet ${newDataSets.length + 1}`], questions)[0]
+        generateDatasets([`DataSet ${newDataSets.length + 1}`], parameters)[0]
       );
     }
 
-    createTable("table-container", newDataSetLabels, questions, newDataSets);
-    initializeChart(chartType, questions, newDataSets);
+    createTable("table-container", newDataSetLabels, parameters, newDataSets);
+    initializeChart(chartType, parameters, newDataSets);
     localStorage.setItem("chart_number-of-datasets", newLabelCount);
     localStorage.setItem("chart_data", JSON.stringify(newDataSets));
   });
