@@ -1,3 +1,4 @@
+//////////////// TABS
 const tabLabels = document.querySelectorAll(".tab-label");
 const tabs = document.querySelectorAll(".tab-content");
 
@@ -20,6 +21,81 @@ tabLabels.forEach(label => {
 });
 
 
+/////////////////////// Form tab
+let formWrapper = document.querySelector('#tab-1 > div')
+
+let formQuestions = [
+  'Alan adı sayısı',
+  'Alt alan adı sayısı',
+  'Harici Alan adı sayısı',
+  'Dinamik site',
+  'TLS',
+  'Kısmi TLS',
+  'Validate',
+  'Bloklama',
+  'URL Parametreleri',
+  'Formlar',
+  'Gizli Form',
+  'Doğrulama',
+  'Dosya Yükleme',
+  'Arama',
+  'İçerden Javascript Çalıştırma',
+  'Dışardan JAvascript Çalıştırma',
+  'Sunucu Tarafında Script çalıştırma',
+  'Java',
+  'Feeds',
+  'Eski Versiyon Teknoloji',
+  'Kendi Cookielerinin sayısı',
+  'Dış kaynak Cookileri sayısı',
+  'Rol',
+  'Yetkiler',
+  'Mimari Etkiler',
+]
+
+let companies = [
+  'Company/Question', // This will be the header for the questions column
+  'Company T',
+  'Company E',
+  'Company H',
+  'Company K',
+  'Company Q',
+  // ... other companies
+];
+
+// Create a table element
+let formTable = document.createElement('table');
+formTable.classList.add('px-2', 'border', 'w-full')
+
+// Add header row
+let headerRow = formTable.insertRow();
+companies.forEach((company) => {
+    let headerCell = document.createElement('th');
+    headerCell.innerText = company;
+    headerCell.classList.add('border', 'border-gray-700')
+    headerRow.appendChild(headerCell);
+});
+
+// Add data rows
+formQuestions.forEach((question, index) => {
+    let row = formTable.insertRow();
+    
+    
+    // First column for questions
+    let questionCell = row.insertCell();
+    questionCell.innerText = question;
+    questionCell.classList.add('border', 'border-gray-700')
+
+    // Remaining columns for companies
+    companies.slice(1).forEach(() => {
+        // Here you can insert specific data for each company
+        // For now, I'm just inserting an empty cell
+        row.insertCell();
+    });
+});
+
+// Append the table to formWrapper
+formWrapper.appendChild(formTable);
+
 ////////////////////// result tab
 
 const chartContext = document.getElementById("radial-chart").getContext("2d");
@@ -38,8 +114,16 @@ const parameters = [
   "infra",
 ];
 
+let companyNames = [
+  'Company T',
+  'Company E',
+  'Company H',
+  'Company K',
+  'Company Q',
+]
+
 function createDataSetLabels(count) {
-  return Array.from({ length: count }, (_, i) => `DataSet ${i + 1}`);
+  return Array.from({ length: count }, (_, i) => `${companyNames[i]}`);
 }
 
 function initializeChart(chartType, parameters, dataSets) {
@@ -139,7 +223,7 @@ if (localStorage.getItem("chart_data")) {
   dataSets = dataSets.slice(0, countDatasetLabel);
   while (dataSets.length < countDatasetLabel) {
     dataSets.push(
-      generateDatasets([`DataSet ${dataSets.length + 1}`], parameters)[0]
+      generateDatasets([`${companyNames[dataSets.length]}`], parameters)[0]
     );
   }
 } else {
@@ -170,7 +254,7 @@ document
     newDataSets = newDataSets.slice(0, newLabelCount);
     while (newDataSets.length < newLabelCount) {
       newDataSets.push(
-        generateDatasets([`DataSet ${newDataSets.length + 1}`], parameters)[0]
+        generateDatasets([`${companyNames[newDataSets.length]}`], parameters)[0]
       );
     }
 
